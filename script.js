@@ -9,7 +9,7 @@ function setInfo(info){
 }
 
 function getInfo(){return new Promise((resolve, reject) => {
-    fetch("http://ip-api.com/json/").then(r => r.json().then(d => {
+    fetch("https://cors-anywhere.herokuapp.com/http://ip-api.com/json/", {headers: {"Origin": "https://iknowwhereyou.live"}}).then(r => r.json().then(d => {
         if(!r.ok){
             reject(d)
         }
