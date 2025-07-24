@@ -9,7 +9,7 @@ function setInfo(info){
 }
 
 function getInfo(){return new Promise((resolve, reject) => {
-    fetch("https://free.freeipapi.com/api/json".then(r => r.json().then(d => {
+    fetch("https://free.freeipapi.com/api/json").then(r => r.json().then(d => {
         if(!r.ok){
             reject(d)
         }
