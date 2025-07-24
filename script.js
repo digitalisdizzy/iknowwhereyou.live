@@ -3,13 +3,13 @@ function setInfo(info){
         document.getElementById("ip").textContent = "105.16.207.142"
         document.getElementById("other").textContent = ""
     } else {
-        document.getElementById("ip").textContent = info.query
-        document.getElementById("other").innerHTML = `${info.city}, ${info.country} (Postal ${info.zip})<br>Latitude ${info.lat}, Longitude ${info.lon}<br>ISP: ${info.isp}`
+        document.getElementById("ip").textContent = info.ipAddress
+        document.getElementById("other").innerHTML = `${info.cityName}, ${info.countryName}<br>Latitude ${info.latitude}, Longitude ${info.longitude}<br>ISP: ${info.asnOrganization}`
     }
 }
 
 function getInfo(){return new Promise((resolve, reject) => {
-    fetch("https://cors-anywhere.herokuapp.com/http://ip-api.com/json/", {headers: {"Origin": "https://iknowwhereyou.live"}}).then(r => r.json().then(d => {
+    fetch("https://free.freeipapi.com/api/json".then(r => r.json().then(d => {
         if(!r.ok){
             reject(d)
         }
